@@ -14,9 +14,17 @@ public class WhenStep extends AbstractScenarioStep{
 
     @Когда("пользователь нажимает {string}")
     public void clickAddButton(String button) throws InterruptedException, FileNotFoundException {
-        adminPage.openAddCakePage();
-        Thread.sleep(1000);
-        allureForScreenshot.takeScreenshot(WebDriverSingleton.getDriver());
+        if(button.equals("Добавить торт")) {
+            adminPage.openAddCakePage();
+            Thread.sleep(1000);
+            allureForScreenshot.takeScreenshot(WebDriverSingleton.getDriver());
+        }
+
+        if(button.equals("Добавить")) {
+            cakeAddPage.addCake();
+            Thread.sleep(1000);
+            allureForScreenshot.takeScreenshot(WebDriverSingleton.getDriver());
+        }
     }
 
     @Когда("прописывает {string} в \"Названии\"")

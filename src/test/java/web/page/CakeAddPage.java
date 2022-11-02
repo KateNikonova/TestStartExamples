@@ -47,6 +47,14 @@ public class CakeAddPage extends AbstractPageTest {
     @FindBy(xpath = " //button[contains(text(), 'Добавить')]")
     public WebElement addButton;
 
+    @FindBy(xpath = "//button[@class='class=jsx-102334425 jsx-3603300204 button is-primary']")
+    public WebElement addCakeButton;
+
+    //Open reasons list
+    public void addCake(){
+        addButton.click();
+    }
+
     // enter title
     public void inputTitle(String name) {
         title.sendKeys(name);

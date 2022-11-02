@@ -15,7 +15,7 @@ public class WebDriverSingleton {
 
     public static WebDriver getDriver() {
         if (Objects.isNull(driver)) {
-            System.setProperty("webdriver.chrome.driver", "src/test/resources/WebDriver/chromedriver.exe");
+            System.setProperty("webdriver.chrome.driver", "src/test/resources/WebDriver/chromedriver");
             driver = new ChromeDriver();
             driver.manage().window().maximize();
         }
